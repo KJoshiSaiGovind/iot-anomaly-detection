@@ -42,11 +42,9 @@ This forms a Hybrid Intrusion Detection System.
 iot-anomaly-detection/
 │
 ├── webapp/
-│   ├── app.py
-│   ├── templates/
-│   │   └── index.html
-│   └── static/
-│       └── style.css
+│ ├── app.py
+│ ├── templates/
+│ └── static/
 │
 ├── Dockerfile
 ├── requirements.txt
@@ -136,4 +134,5 @@ Advanced attack classification
 
 📜 License
 This project is developed for academic purposes and final year project.
+
 
