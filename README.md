@@ -1,138 +1,64 @@
-# IoT Network Anomaly Detection System
+🌐 IoT Network Anomaly Detection System
+📌 Project Overview
+The rise of IoT devices has expanded the attack surface for cybercriminals. This project implements a Hybrid Intrusion Detection System (IDS) designed specifically for IoT environments. By leveraging Deep Learning Autoencoders, the system learns "normal" network behavior and identifies deviations as potential threats.
 
-## 📌 Project Overview
+Key Capabilities:
+Proactive Defense: Detects zero-day threats using unsupervised learning.
 
-This project implements a Deep Learning–based Intrusion Detection System (IDS) for IoT networks.
+Attack Identification: Heuristically classifies anomalies into categories like DDoS, Port Scanning, Data Exfiltration, and MITM.
 
-It uses an Autoencoder Neural Network to learn normal network behavior and detect anomalous traffic patterns that may indicate cyber attacks such as:
+Containerized Deployment: Fully Dockerized for "plug-and-play" execution across different environments.
 
-- DDoS Attacks
-- Port Scanning
-- Data Exfiltration
-- Man-in-the-Middle (MITM) Attacks
+🧠 The Hybrid Approach
+Unlike traditional signature-based systems, this project uses a two-tier detection logic:
 
-The system is deployed as a web application using Flask and containerized using Docker for portability and easy deployment.
+Deep Learning Tier: An Autoencoder compresses and reconstructs input data. High reconstruction error indicates an anomaly.
 
----
+Statistical Tier: Employs a 95th Percentile Thresholding strategy to dynamically separate noise from genuine threats.
 
-## ⚙️ Technologies Used
+Rule Tier: A heuristic engine maps detected anomalies to specific attack patterns based on network feature signatures.
 
-- Python 3
-- Flask (Web Framework)
-- TensorFlow / Keras (Deep Learning)
-- Scikit-learn (Preprocessing)
-- Pandas & NumPy (Data Handling)
-- Docker (Containerization)
-- HTML / CSS (Frontend)
+⚙️ Tech Stack
+Backend: Flask (Python)
 
----
+AI/ML: TensorFlow, Keras, Scikit-learn
 
-## 🧠 Model Used
+Data Science: Pandas, NumPy
 
-- Deep Learning Autoencoder (Unsupervised Learning)
-- Statistical Thresholding (95th Percentile)
-- Rule-Based Attack Classification
+DevOps: Docker
 
-This forms a Hybrid Intrusion Detection System.
+Frontend: Responsive HTML5/CSS3
 
----
-
-## 📂 Project Structure
-
+📂 Project Structure
+Plaintext
 iot-anomaly-detection/
 │
 ├── webapp/
-│ ├── app.py
-│ ├── templates/
-│ └── static/
+│   ├── app.py              # Flask Application logic
+│   ├── model_engine.py      # Deep Learning inference & logic
+│   ├── templates/          # HTML files (Dashboard, Upload)
+│   └── static/             # CSS & JavaScript assets
 │
-├── Dockerfile
-├── requirements.txt
-├── .gitignore
-├── .dockerignore
-└── README.md
+├── Dockerfile              # Containerization instructions
+├── requirements.txt        # Python dependencies
+├── .dockerignore           # Files to exclude from Docker build
+└── README.md               # Project documentation
+🚀 Getting Started
+Prerequisites
+Docker Desktop installed.
 
+Installation & Execution
+Clone the Repository
 
----
-
-## ✅ System Requirements
-
-Before running this project, make sure you have:
-
-- Docker Desktop installed
-  Download: https://www.docker.com/products/docker-desktop/
-
-No Python or extra libraries are required if using Docker.
-
----
-
-## 🚀 How to Run the Project (Using Docker)
-
-### Step 1: Clone the Repository
-
+Bash
 git clone https://github.com/KJoshiSaiGovind/iot-anomaly-detection.git
 cd iot-anomaly-detection
-Step 2: Build Docker Image
+Build the Image
+
+Bash
 docker build -t iot-anomaly-app .
-Step 3: Run Docker Container
+Launch the Application
+
+Bash
 docker run -p 5000:5000 iot-anomaly-app
-Step 4: Open in Browser
-Open any browser and go to:
-
-http://localhost:5000
-Step 5: Upload Dataset
-Upload an IoT network CSV dataset (TON_IoT / BoT-IoT / similar format)
-
-Click "Analyze Network"
-
-View anomaly detection results and attack classification
-
-📊 Output Features
-The system displays:
-
-Total Records
-
-Normal Traffic Count
-
-Anomalies Detected
-
-Detection Threshold
-
-Top Suspicious Records
-
-Attack Type Labels
-
-Example Attacks Detected:
-
-Possible DDoS Attack
-
-Possible Port Scan
-
-Possible Data Exfiltration
-
-Possible MITM Attack
-
-⚠️ Limitations
-Dataset-specific training (model trains per upload)
-
-Processing time depends on dataset size
-
-Not optimized for large-scale production environments
-
-Rule-based attack labeling is heuristic
-
-🔮 Future Enhancements
-Real-time packet capture integration
-
-LSTM-based temporal modeling
-
-Cloud deployment (AWS / Azure)
-
-Continuous learning system
-
-Advanced attack classification
-
-📜 License
-This project is developed for academic purposes and final year project.
-
-
+Access the Web UI Navigate to http://localhost:5000 in your web browser.
