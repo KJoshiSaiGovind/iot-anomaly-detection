@@ -40,20 +40,20 @@ This forms a Hybrid Intrusion Detection System.
 
 ## 📂 Project Structure
 
-iot-anomaly-detection/
-│
-├── webapp/
-│ ├── app.py
-│ ├── templates/
-│ │ └── index.html
-│ └── static/
-│ └── style.css
-│
-├── Dockerfile
-├── requirements.txt
-├── .gitignore
-├── .dockerignore
-└── README.md
+    iot-anomaly-detection/
+    │
+    ├── webapp/
+    │ ├── app.py
+    │ ├── templates/
+    │ │ └── index.html
+    │ └── static/
+    │ └── style.css
+    │
+    ├── Dockerfile
+    ├── requirements.txt
+    ├── .gitignore
+    ├── .dockerignore
+    └── README.md
 
 
 ---
@@ -71,18 +71,18 @@ No additional software is required.
 ## 🚀 How to Run the Project (Using Docker)
 
 ### Step 1: Clone the Repository
+    
+    git clone https://github.com/KJoshiSaiGovind/iot-anomaly-detection.git
+    cd iot-anomaly-detection
+    Step 2: Build Docker Image
+    docker build -t iot-anomaly-app .
+    Step 3: Run Docker Container
+    docker run -p 5000:5000 iot-anomaly-app
+    Step 4: Open in Browser
+    Open any browser and go to:
+    http://localhost:5000
 
-```bash
-git clone https://github.com/KJoshiSaiGovind/iot-anomaly-detection.git
-cd iot-anomaly-detection
-Step 2: Build Docker Image
-docker build -t iot-anomaly-app .
-Step 3: Run Docker Container
-docker run -p 5000:5000 iot-anomaly-app
-Step 4: Open in Browser
-Open any browser and go to:
 
-http://localhost:5000
 Step 5: Upload Dataset
 Upload an IoT network traffic CSV file
 
@@ -122,3 +122,4 @@ Possible Port Scan
 Possible Data Exfiltration
 
 Possible MITM Attack
+
