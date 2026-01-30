@@ -1,0 +1,8 @@
+# IoT Anomaly Detection Project Requirements
+numpy
+pandas
+scikit-learn
+tensorflow
+flask
+pyshark
+matplotlib
